@@ -46,6 +46,20 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+/// Finds all lines within a block of text that contain the query, this method is case-sensitive
+///
+/// # Examples
+///
+/// ```
+/// let query = "duct";
+/// let contents = "\
+/// Rust:
+/// safe, fast, productive.
+/// Pick three.
+/// Duct tape.";
+///
+/// assert_eq!(vec!["safe, fast, productive."], minigrep::search(query, contents));
+/// ```
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
@@ -53,6 +67,23 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
         .collect()
 }
 
+/// Finds all lines within a block of text that contain the query, this method is case-insensitive
+///
+/// # Examples
+///
+/// ```
+/// let query = "rUsT";
+/// let contents = "\
+/// Rust:
+/// safe, fast, productive.
+/// Pick three.
+/// Trust me.";
+///
+/// assert_eq!(
+///     vec!["Rust:", "Trust me."],
+///     minigrep::search_case_insensitive(query, contents)
+/// );
+/// ```
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
