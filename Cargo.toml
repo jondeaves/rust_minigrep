@@ -1,8 +1,10 @@
 [package]
-name = "minigrep"
+name = "minigrep_jondeaves"
+description = "A simple grep implementation from The Rust Programing Book"
 version = "0.1.0"
 authors = ["Jon Deaves <hello@jondeaves.me>"]
 edition = "2018"
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

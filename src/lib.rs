@@ -1,3 +1,6 @@
+//! # Minigrep
+//!
+//! `minigrep_jondeaves` is a lightweight implementation of the well known grep command.
 use std::{env, error::Error, fs};
 
 pub struct Config {
@@ -58,7 +61,7 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 /// Pick three.
 /// Duct tape.";
 ///
-/// assert_eq!(vec!["safe, fast, productive."], minigrep::search(query, contents));
+/// assert_eq!(vec!["safe, fast, productive."], minigrep_jondeaves::search(query, contents));
 /// ```
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
@@ -81,7 +84,7 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
 ///
 /// assert_eq!(
 ///     vec!["Rust:", "Trust me."],
-///     minigrep::search_case_insensitive(query, contents)
+///     minigrep_jondeaves::search_case_insensitive(query, contents)
 /// );
 /// ```
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {

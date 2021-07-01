@@ -1,6 +1,6 @@
 use std::{env, process};
 
-use minigrep::Config;
+use minigrep_jondeaves::Config;
 
 /*
 Excert about what main.rs should do, from https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html
@@ -17,7 +17,7 @@ fn main() {
         process::exit(1);
     });
 
-    if let Err(e) = minigrep::run(config) {
+    if let Err(e) = minigrep_jondeaves::run(config) {
         eprintln!("Application error: {}", e);
 
         process::exit(1);
